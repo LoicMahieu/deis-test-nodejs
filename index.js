@@ -11,6 +11,10 @@ app.get('/', function (req, res) {
   res.send('Hello World')
 });
 
+app.get('/headers', function (req, res) {
+  res.send(req.headers)
+});
+
 
 var port = process.env.PORT || 3000;
 app.listen(port, function (err) {
