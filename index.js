@@ -15,6 +15,10 @@ app.get('/headers', function (req, res) {
   res.send(req.headers)
 });
 
+app.get('/env', function (req, res) {
+  res.send(process.env)
+});
+
 
 var port = process.env.PORT || 3000;
 app.listen(port, function (err) {
