@@ -19,6 +19,10 @@ app.get('/env', function (req, res) {
   res.send(process.env)
 });
 
+app.get('/do-error', function (req, res) {
+  throw new Error('boom!');
+});
+
 
 var port = process.env.PORT || 3000;
 app.listen(port, function (err) {
