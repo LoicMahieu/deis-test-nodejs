@@ -23,6 +23,12 @@ app.get('/do-error', function (req, res) {
   throw new Error('boom!');
 });
 
+app.get('/do-error-async', function (req, res) {
+  process.nextTick(function () {
+    throw new Error('boom!');
+  });
+});
+
 
 var port = process.env.PORT || 3000;
 app.listen(port, function (err) {
