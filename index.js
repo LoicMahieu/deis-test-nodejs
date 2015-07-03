@@ -31,10 +31,15 @@ app.get('/do-error-async', function (req, res) {
 
 
 var port = process.env.PORT || 3000;
-app.listen(port, function (err) {
-  if (err) {
-    throw err;
-  }
 
-  console.log('Listen to http://localhost:' + port);
-});
+setTimeout(function () {
+
+  app.listen(port, function (err) {
+    if (err) {
+      throw err;
+    }
+
+    console.log('Listen to http://localhost:' + port);
+  });
+
+}, 5000);
